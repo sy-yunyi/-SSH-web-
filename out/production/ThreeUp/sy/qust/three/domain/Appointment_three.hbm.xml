@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sy.qust.three.domain.Appointment_three" table="appointment" schema="threeup">
+        <id name="apid">
+            <column name="apid" sql-type="varchar(15)" length="15"/>
+        </id>
+        <property name="apphone">
+            <column name="apphone" sql-type="varchar(11)" length="11" not-null="true"/>
+        </property>
+        <property name="atphone">
+            <column name="atphone" sql-type="varchar(11)" length="11" not-null="true"/>
+        </property>
+        <property name="acname">
+            <column name="acname" sql-type="varchar(8)" length="8" not-null="true"/>
+        </property>
+        <property name="acage">
+            <column name="acage" sql-type="int(2)" not-null="true"/>
+        </property>
+        <property name="asubject">
+            <column name="asubject" sql-type="varchar(6)" length="6" not-null="true"/>
+        </property>
+        <property name="acgrade">
+            <column name="acgrade" sql-type="varchar(8)" length="8" not-null="true"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar(150)" length="150" not-null="true"/>
+        </property>
+        <property name="astarttime">
+            <column name="astarttime" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="astoptime">
+            <column name="astoptime" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="aday">
+            <column name="aday" sql-type="int(4)" not-null="true"/>
+        </property>
+        <property name="aflag">
+            <column name="aflag" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="acsex">
+            <column name="acsex" sql-type="varchar(4)" length="4" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

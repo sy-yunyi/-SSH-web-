@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+        <!-- 配置Action -->
+        <package name="three" extends="struts-default" namespace="/">
+            <action name="admin_*" class="adminAction" method="{1}" >
+                <result name="input">/index.jsp</result>
+                <result name="success">/add.jsp</result>
+            </action>
+        </package>
+        <package name="fteacher" extends="struts-default" namespace="/">
+            <action name="fteacher_*" class="fteacherAction" method="{1}">
+                <result name="success">/index.jsp</result>
+                <result name="NOUSER">/login.jsp</result>
+                <result name="error">/login.jsp</result>
+                <result name="INFO">/info.jsp</result>
+                <result name="CHANGE">/personCenter.jsp</result>
+                <result name="CHPW">/changePwd.jsp</result>
+                <result name="UP">/changeImg.jsp</result>
+                <result name="PER">/detail.jsp</result>
+                <result name="APP">/appointment.jsp</result>
+            </action>
+            <action name="tsinfo_*" class="tsinfoAction" method="{1}">
+                <result name="ADD">/changeSub.jsp</result>
+                <result name="DETE">/changeSub.jsp</result>
+            </action>
+            <action name="tcinfo_*" class="tcinfoAction" method="{1}">
+                <result name="ADD">/changeSub.jsp</result>
+                <result name="DETE">/changeSub.jsp</result>
+            </action>
+        </package>
+        <package name="parent" extends="struts-default" namespace="/">
+            <action name="parent_*" class="parentsAction" method="{1}">
+                <result name="FIND">/cinfo.jsp</result>
+            </action>
+        </package>
+        <package name="follow" extends="struts-default" namespace="/">
+            <action name="follow_*" class="followAction" method="{1}">
+            </action>
+        </package>
+    <package name="appointment" extends="struts-default" namespace="/">
+        <action name="appointment_*" class="appointmentAction" method="{1}">
+            <result name="APP">/myAppoint.jsp</result>
+            <result name="ADD">/index.jsp</result>
+        </action>
+    </package>
+    <package name="qbank" extends="struts-default" namespace="/">
+        <action name="qbank_*" class="qbankAction" method="{1}">
+        </action>
+    </package>
+    <package name="sqinfo" extends="struts-default" namespace="/">
+        <action name="sqinfo_*" class="sqinfoAction" method="{1}">
+        </action>
+    </package>
+    <package name="tporders" extends="struts-default" namespace="/">
+        <action name="tporders_*" class="tpordersAction" method="{1}">
+            <result name="ADD">/myAppoint.jsp</result>
+            <result name="APP">/myAppoint.jsp</result>
+            <result name="FIND">/tporders.jsp</result>
+            <result name="PAGE">/tporders.jsp</result>
+        </action>
+    </package>
+</struts>

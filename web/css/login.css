@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+/*搜索列表部分*/
+
+
+
+#sl_2{
+	position:relative;display:block;text-align:left;width:1000px;height:390px;padding-bottom:0px; margin-top:120px;	-moz-border-radius: 25px 0px 25px 0px;-webkit-border-radius: 25px 0px 25px 0px;border-radius:25px 0px 25px 0px;box-shadow: 3px 3px 4px #C1C1C1;}
+
+#sl_2_table{
+	display:block;float:left;
+	margin:55px 0px 0px 120px;width:800px;display:inline;
+	}
+.sl_2_table_input{
+	width:237px; height:30px;
+	margin:10px 0px 0px 0px;}
+.sl_2_table_input1{
+	width:170px; height:30px;
+	margin:10px 0px 0px 0px;}
+.buttonSubmit {
+    font-family: "STHeiti","SimHei", "黑体";
+	font-size:14px;
+	color:#FFFFFF;
+    border: 1px #FF9900 solid;
+	background-color:#FF9900;
+    cursor: hand;
+    width:150px;
+    height:38px;
+	margin-top:3px;
+	-moz-border-radius: 5pxx;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+
+}
+
+.aBottomGray:visited,.aBottomGray:link{
+	font-family: "STHeiti","SimHei", "黑体";
+	margin-left:5px;
+	padding:12px 47px 12px 47px;
+	font-size:13px;color:#FFFFFF;background-color:#D7D7D7;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.aBottomGray:active,.aBottomGray:hover{
+	font-family: "STHeiti","SimHei", "黑体";
+	margin-left:5px;
+	padding:12px 47px 12px 47px;
+	font-size:13px;
+	color:#FFFFFF;
+	background-color:#D7D7D7;	
+	-moz-border-radius: 9px;      /* Gecko browsers */
+    -webkit-border-radius: 9px;   /* Webkit browsers */
+    border-radius:9px;            /* W3C syntax */
+	}
+.errorMessage{
+	list-style: none;
+	margin-left: 50%;
+	color: red;
+}

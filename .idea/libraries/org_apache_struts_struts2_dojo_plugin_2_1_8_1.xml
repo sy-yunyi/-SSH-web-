@@ -1,0 +1,8 @@
+<component name="libraryTable">
+  <library name="org.apache.struts:struts2-dojo-plugin:2.1.8.1" type="repository">
+    <properties maven-id="org.apache.struts:struts2-dojo-plugin:2.1.8.1" />
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

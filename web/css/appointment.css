@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/*��绱㈠��琛ㄩ�ㄥ��*/
+
+#sl_2 {
+	position: relative;
+	display: block;
+	text-align: center;
+	width: 1000px;
+	padding-bottom: 0px;
+	margin: 20px 0px 40px 0px;
+	-moz-border-radius: 25px 0px 25px 0px;
+	-webkit-border-radius: 25px 0px 25px 0px;
+	border-radius: 25px 0px 25px 0px;
+	box-shadow: 3px 3px 4px #C1C1C1;
+	align-content: center;
+	background-color: #FFFFFF;
+	padding: 20px 0px 70px 0px;
+}
+
+#sl_2_table {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 10px 0px 20px 60px;
+	display: inline;
+}
+
+#sl_2_table div {
+	background-color: transparent;
+}
+
+.sl_2_table_input1 {
+	height: 25px;
+	margin: 0px 0px 0px 0px;
+}
+
+.buttonSubmit {
+	font-family: "STHeiti", "SimHei", "榛�浣�";
+	font-size: 14px;
+	color: #FFFFFF;
+	border: 1px #FF9900 solid;
+	background-color: #FF9900;
+	cursor: hand;
+	width: 150px;
+	height: 38px;
+	margin-top: 3px;
+	-moz-border-radius: 5pxx;
+	/* Gecko browsers */
+	-webkit-border-radius: 5px;
+	/* Webkit browsers */
+	border-radius: 5px;
+	/* W3C syntax */
+}
+
+.aBottomGray:visited,
+.aBottomGray:link {
+	font-family: "STHeiti", "SimHei", "榛�浣�";
+	margin-left: 5px;
+	padding: 12px 47px 12px 47px;
+	font-size: 13px;
+	color: #FFFFFF;
+	background-color: #D7D7D7;
+	-moz-border-radius: 5px;
+	/* Gecko browsers */
+	-webkit-border-radius: 5px;
+	/* Webkit browsers */
+	border-radius: 5px;
+	/* W3C syntax */
+}
+
+.aBottomGray:active,
+.aBottomGray:hover {
+	font-family: "STHeiti", "SimHei", "榛�浣�";
+	margin-left: 5px;
+	padding: 12px 47px 12px 47px;
+	font-size: 13px;
+	color: #FFFFFF;
+	background-color: #D7D7D7;
+	-moz-border-radius: 9pxx;
+	/* Gecko browsers */
+	-webkit-border-radius: 9px;
+	/* Webkit browsers */
+	border-radius: 9px;
+	/* W3C syntax */
+}

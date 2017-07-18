@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sy.qust.three.domain.Administrator_three" table="administrator" schema="threeup">
+        <id name="aid">
+            <column name="aid" sql-type="int(5)"/>
+        </id>
+        <property name="aname">
+            <column name="aname" sql-type="varchar(6)" length="6"/>
+        </property>
+        <property name="apasswd">
+            <column name="apasswd" sql-type="varchar(6)" length="6" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

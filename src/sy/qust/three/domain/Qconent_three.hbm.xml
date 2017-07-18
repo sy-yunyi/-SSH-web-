@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sy.qust.three.domain.Qconent_three" table="qconent" schema="threeup">
+        <id name="qcid">
+            <column name="qcid" sql-type="int(5)"/>
+        </id>
+        <property name="qid">
+            <column name="qid" sql-type="int(5)" not-null="true"/>
+        </property>
+        <property name="qoption">
+            <column name="qoption" sql-type="varchar(1)" length="1" not-null="true"/>
+        </property>
+        <property name="qoconent">
+            <column name="qoconent" sql-type="varchar(300)" length="300" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

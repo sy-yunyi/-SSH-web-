@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="threeup@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="threeup">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="bank"/>
+    <schema id="4" parent="1" name="easyd"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="ssh"/>
+    <schema id="9" parent="1" name="test"/>
+    <table id="10" parent="2" name="administrator"/>
+    <table id="11" parent="2" name="appointment"/>
+    <table id="12" parent="2" name="follow"/>
+    <table id="13" parent="2" name="fteacher"/>
+    <table id="14" parent="2" name="parents"/>
+    <table id="15" parent="2" name="qbank"/>
+    <table id="16" parent="2" name="qconent"/>
+    <table id="17" parent="2" name="sqinfo"/>
+    <table id="18" parent="2" name="subject"/>
+    <table id="19" parent="2" name="tcinfo"/>
+    <table id="20" parent="2" name="tporders"/>
+    <table id="21" parent="2" name="tsinfo"/>
+    <column id="22" parent="10" name="aid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="10" name="aname">
+      <Position>2</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="10" name="apasswd">
+      <Position>3</Position>
+      <DataType>varchar(6)|0</DataType>
+    </column>
+    <key id="25" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="11" name="apid">
+      <Position>1</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="11" name="apphone">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="28" parent="11" name="atphone">
+      <Position>3</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="29" parent="11" name="acname">
+      <Position>4</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="30" parent="11" name="acage">
+      <Position>5</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="31" parent="11" name="asubject">
+      <Position>7</Position>
+      <DataType>varchar(6)|0</DataType>
+    </column>
+    <column id="32" parent="11" name="acgrade">
+      <Position>8</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="33" parent="11" name="address">
+      <Position>9</Position>
+      <DataType>varchar(150)|0</DataType>
+    </column>
+    <column id="34" parent="11" name="astarttime">
+      <Position>10</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="35" parent="11" name="astoptime">
+      <Position>11</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="36" parent="11" name="aday">
+      <Position>12</Position>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <column id="37" parent="11" name="aflag">
+      <Position>13</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="38" parent="11" name="acsex">
+      <Position>6</Position>
+      <DataType>varchar(4)|0</DataType>
+    </column>
+    <key id="39" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>apid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="12" name="followID">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="41" parent="12" name="fid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="12" name="followedID">
+      <Position>3</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="43" parent="12" name="ftime">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="44" parent="12" name="ftype">
+      <Position>5</Position>
+      <DataType>varchar(2)|0</DataType>
+    </column>
+    <key id="45" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>fid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="13" name="isGold">
+      <Position>14</Position>
+      <DataType>int(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="47" parent="13" name="isPass">
+      <Position>12</Position>
+      <DataType>int(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="48" parent="13" name="tid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="13" name="tname">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="50" parent="13" name="tphone">
+      <Position>3</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="13" name="tpasswd">
+      <Position>4</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="52" parent="13" name="tage">
+      <Position>5</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="53" parent="13" name="tsex">
+      <Position>6</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="54" parent="13" name="tshool">
+      <Position>7</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="55" parent="13" name="teducation">
+      <Position>8</Position>
+      <DataType>varchar(6)|0</DataType>
+    </column>
+    <column id="56" parent="13" name="tgread">
+      <Position>9</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="57" parent="13" name="tintroduce">
+      <Position>10</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="58" parent="13" name="thabit">
+      <Position>11</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="59" parent="13" name="timage">
+      <Position>13</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="60" parent="13" name="tpoints">
+      <Position>15</Position>
+      <DataType>int(5)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="61" parent="13" name="registerDate">
+      <Position>16</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="62" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="63" parent="14" name="address">
+      <Position>10</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="64" parent="14" name="pid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="65" parent="14" name="pphone">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="14" name="ppasswd">
+      <Position>3</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="67" parent="14" name="pimage">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="68" parent="14" name="pname">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="69" parent="14" name="cname">
+      <Position>6</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="70" parent="14" name="csex">
+      <Position>7</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="71" parent="14" name="cage">
+      <Position>8</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="72" parent="14" name="cgrade">
+      <Position>9</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="73" parent="14" name="pclaim">
+      <Position>11</Position>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <key id="74" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="75" parent="15" name="qid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="76" parent="15" name="qnumber">
+      <Position>2</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="77" parent="15" name="qsubject">
+      <Position>3</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="78" parent="15" name="qconent">
+      <Position>4</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="79" parent="15" name="qanswer">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="80" parent="15" name="qrank">
+      <Position>6</Position>
+      <DataType>varchar(2)|0</DataType>
+    </column>
+    <column id="81" parent="15" name="qanalysis">
+      <Position>7</Position>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <key id="82" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>qid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="83" parent="16" name="qcid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="84" parent="16" name="qid">
+      <Position>2</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="85" parent="16" name="qoption">
+      <Position>3</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="86" parent="16" name="qoconent">
+      <Position>4</Position>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <key id="87" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>qcid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="88" parent="17" name="sqid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="89" parent="17" name="spphone">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="90" parent="17" name="sname">
+      <Position>3</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="91" parent="17" name="sanswer">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="92" parent="17" name="qanswer">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="93" parent="17" name="sisright">
+      <Position>6</Position>
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <column id="94" parent="17" name="sqtime">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="95" parent="17" name="qsubject">
+      <Position>8</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="96" parent="17" name="qid">
+      <Position>9</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <key id="97" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sqid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="98" parent="18" name="sid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="99" parent="18" name="sname">
+      <Position>2</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="100" parent="18" name="sprice">
+      <Position>3</Position>
+      <DataType>double(4)|0</DataType>
+    </column>
+    <key id="101" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="102" parent="19" name="tcid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="103" parent="19" name="grade">
+      <Position>3</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="104" parent="19" name="tphone">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <key id="105" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tcid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="106" parent="20" name="studyTime">
+      <Position>10</Position>
+      <DataType>int(3)|0</DataType>
+    </column>
+    <column id="107" parent="20" name="startTime">
+      <Position>11</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="108" parent="20" name="endTime">
+      <Position>12</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="109" parent="20" name="isValid">
+      <Position>14</Position>
+      <DataType>int(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="110" parent="20" name="oid">
+      <Position>1</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="20" name="otime">
+      <Position>9</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="112" parent="20" name="oprice">
+      <Position>13</Position>
+      <DataType>double(4)|0</DataType>
+    </column>
+    <column id="113" parent="20" name="osubject">
+      <Position>7</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="114" parent="20" name="canceltime">
+      <Position>15</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="115" parent="20" name="tphone">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="116" parent="20" name="pphone">
+      <Position>3</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="117" parent="20" name="ocname">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="118" parent="20" name="ocage">
+      <Position>5</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="119" parent="20" name="ocsex">
+      <Position>6</Position>
+      <DataType>varchar(4)|0</DataType>
+    </column>
+    <column id="120" parent="20" name="ocgrade">
+      <Position>8</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <key id="121" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>oid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="122" parent="21" name="tsid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="123" parent="21" name="sid">
+      <Position>3</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="124" parent="21" name="tphone">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="125" parent="21" name="sname">
+      <Position>4</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="126" parent="21" name="tprice">
+      <Position>5</Position>
+      <DataType>double(4)|0</DataType>
+    </column>
+    <key id="127" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tsid</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

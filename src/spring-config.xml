@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+    <!-- 引入外部的属性文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!-- 配置c3p0连接池 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driverClass}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" scope="prototype">
+    <!-- 注入连接池 -->
+    <property name="dataSource" ref="dataSource"/>
+        <!-- 配置Hibernate的属性 -->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.connection.autocommit">true</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/threeup</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:sy/qust/three/domain/Administrator_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Fteacher_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Tsinfo_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Subject_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Parents_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Tcinfo_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Follow_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Qconent_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Qbank_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Sqinfo_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Appointment_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Tporders_three.hbm.xml</value>
+                <value>classpath:sy/qust/three/domain/Sqinfo_three.hbm.xml</value>
+            </list>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>sy.qust.three.domain.Administrator_three</value>
+                <value>sy.qust.three.domain.Fteacher_three</value>
+                <value>sy.qust.three.domain.Tsinfo_three</value>
+                <value>sy.qust.three.domain.Parents_three</value>
+                <value>sy.qust.three.domain.Subject_three</value>
+                <value>sy.qust.three.domain.Tcinfo_three</value>
+                <value>sy.qust.three.domain.Follow_three</value>
+                <value>sy.qust.three.domain.Appointment_three</value>
+                <value>sy.qust.three.domain.Qbank_three</value>
+                <value>sy.qust.three.domain.Qconent_three</value>
+                <value>sy.qust.three.domain.Sqinfo_three</value>
+                <value>sy.qust.three.domain.Tporders_three</value>
+            </list>
+        </property>
+
+    </bean>
+
+
+    <!-- 配置Action类  在Action 中注入Service -->
+    <bean id="adminAction" class="sy.qust.three.action.AdminAction" scope="prototype">
+        <property name="adminService" ref="adminService"/>
+    </bean>
+    <bean id="fteacherAction" class="sy.qust.three.action.FteacherAction" scope="prototype">
+        <property name="fteacherService" ref="fteacherService"/>
+        <property name="tsinfoService" ref="tsinfoService"/>
+        <property name="tcinfoService" ref="tcinfoService"/>
+        <property name="appointmentService" ref="appointmentService"/>
+        <property name="subjectService" ref="subjectService"/>
+    </bean>
+    <bean id="tsinfoAction" class="sy.qust.three.action.TsinfoAction" scope="prototype">
+        <property name="tsinfoService" ref="tsinfoService"/>
+        <property name="subjectService" ref="subjectService"/>
+        <property name="fteacherService" ref="fteacherService"/>
+        <property name="tcinfoService" ref="tcinfoService"/>
+    </bean>
+    <bean id="parentsAction" class="sy.qust.three.action.ParentsAction" scope="prototype">
+        <property name="parentsService" ref="parentsService"/>
+    </bean>
+    <bean id="subjectAction" class="sy.qust.three.action.SubjectAction" scope="prototype">
+        <property name="subjectService" ref="subjectService"/>
+    </bean>
+    <bean id="tcinfoAction" class="sy.qust.three.action.TcinfoAction" scope="prototype">
+        <property name="tcinfoService" ref="tcinfoService"/>
+    </bean>
+    <bean id="followAction" class="sy.qust.three.action.FollowAction" scope="prototype">
+        <property name="followService" ref="followService"/>
+        <property name="fteacherService" ref="fteacherService"/>
+    </bean>
+    <bean id="appointmentAction" class="sy.qust.three.action.AppointmentAction" scope="prototype">
+        <property name="appointmentService" ref="appointmentService"/>
+        <property name="tpordersService" ref="tpordersService"/>
+    </bean>
+    <bean id="qbankAction" class="sy.qust.three.action.QbankAction" scope="prototype">
+        <property name="qbankService" ref="qbankService"/>
+        <property name="qconentService" ref="qconentService"/>
+        <property name="sqinfoService" ref="sqinfoService"/>
+    </bean>
+    <bean id="qconentAction" class="sy.qust.three.action.QconentAction" scope="prototype">
+        <property name="qconentService" ref="qconentService"/>
+    </bean>
+    <bean id="sqinfoAction" class="sy.qust.three.action.SqinfoAction" scope="prototype">
+        <property name="sqinfoService" ref="sqinfoService"/>
+    </bean>
+    <bean id="tpordersAction" class="sy.qust.three.action.TpordersAction" scope="prototype">
+        <property name="tpordersService" ref="tpordersService"/>
+        <property name="appointmentService" ref="appointmentService"/>
+    </bean>
+
+
+    <!-- 配置业务层的类  在service 中注入DAO-->
+    <bean id="adminService" class="sy.qust.three.service.impl.AdminServiceImpl" >
+        <property name="adminDao" ref="adminDao"/>
+    </bean>
+    <bean id="fteacherService" class="sy.qust.three.service.impl.FteacherServiceImpl" >
+        <property name="fteacherDao" ref="fteacherDao"/>
+        <property name="tsinfoDao" ref="tsinfoDao"/>
+    </bean>
+    <bean id="tsinfoService" class="sy.qust.three.service.impl.TsinfoServiceInpm" >
+        <property name="tsinfoDao" ref="tsinfoDao"/>
+    </bean>
+    <bean id="parentsService" class="sy.qust.three.service.impl.ParentsServiceImpl">
+        <property name="parentsDao" ref="parentsDao"/>
+    </bean>
+    <bean id="subjectService" class="sy.qust.three.service.impl.SubjectServiceImpl">
+        <property name="subjectDao" ref="subjectDao"/>
+    </bean>
+    <bean id="tcinfoService" class="sy.qust.three.service.impl.TcinfoServiceImpl">
+        <property name="tcinfoDao" ref="tcinfoDao"/>
+    </bean>
+    <bean id="followService" class="sy.qust.three.service.impl.FollowServiceImpl">
+        <property name="followDao" ref="followDao"/>
+    </bean>
+    <bean id="appointmentService" class="sy.qust.three.service.impl.AppointmentServiceImpl">
+        <property name="appointmentDao" ref="appiontmentDao"/>
+    </bean>
+    <bean id="qbankService" class="sy.qust.three.service.impl.QbankServiceImpl" >
+        <property name="qbankDao" ref="qbankDao"/>
+    </bean>
+    <bean id="qconentService" class="sy.qust.three.service.impl.QconentServiceImpl">
+        <property name="qconentDao" ref="qconentDao"/>
+    </bean>
+    <bean id="sqinfoService" class="sy.qust.three.service.impl.SqinfoServiceImpl">
+        <property name="sqinfoDao" ref="sqinfoDao"/>
+    </bean>
+    <bean id="tpordersService" class="sy.qust.three.service.impl.TpordersServiceImpl">
+        <property name="tpordersDao" ref="tpordersDao"/>
+    </bean>
+
+
+    <!--   配置DAO的类  使用模板，直接注入SessionFactory -->
+    <bean id="adminDao" class="sy.qust.three.dao.impl.AdminDaoImpl" scope="prototype">
+       <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="fteacherDao" class="sy.qust.three.dao.impl.FteacherDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="tsinfoDao" class="sy.qust.three.dao.impl.TsinfoDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="parentsDao" class="sy.qust.three.dao.impl.ParentsDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="subjectDao" class="sy.qust.three.dao.impl.SubjectDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="tcinfoDao" class="sy.qust.three.dao.impl.TcinfoDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="followDao" class="sy.qust.three.dao.impl.FollowDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="appiontmentDao" class="sy.qust.three.dao.impl.AppointmentDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="qbankDao" class="sy.qust.three.dao.impl.QbankDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="qconentDao" class="sy.qust.three.dao.impl.QconentDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="sqinfoDao" class="sy.qust.three.dao.impl.SqinfoDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="tpordersDao" class="sy.qust.three.dao.impl.TpordersDaoImpl" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManger" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+     </bean>
+
+    <!-- 开启注解事务 -->
+    <tx:annotation-driven transaction-manager="transactionManger"/>
+
+
+</beans>
