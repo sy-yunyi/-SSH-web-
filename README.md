@@ -1,5 +1,5 @@
-# -SSH-web-
-三人行--基于SSH的大学生家教平台安卓后端加web端
+# 三人行--基于SSH的大学生家教平台安卓后端加web端
+
 
 SSH（spring，Struts2，hibernate）是比较流行的WEB框架之一，常常适用于一些比较大型的网站架构。
 
